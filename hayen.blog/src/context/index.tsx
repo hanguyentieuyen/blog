@@ -34,7 +34,7 @@ const getThemeFromLocalStorage = () => {
 
 export const GlobalContext = createContext<ContextType>(initialState);
 
-export default function GlobalState({ children }: { children: ReactNode }) {
+export default function GlobalStateProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(false);
   const [theme, setTheme] = useState(() => {
     return getThemeFromLocalStorage() || "light";

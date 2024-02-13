@@ -41,17 +41,17 @@ export default function BlogDetail() {
                 Best practices for successful prototypes
               </h1>
             </header>
-            <p className="lead">
+            <p className="text-gray-500 dark:text-gray-400">
               Flowbite is an open-source library of UI components built with the
               utility-first classes from Tailwind CSS. It also includes
               interactive elements such as dropdowns, modals, datepickers.
             </p>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               Before going digital, you might benefit from scribbling down some
               ideas in a sketchbook. This way, you can think things through
               before committing to an actual design project.
             </p>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               But then I found a{" "}
               <a href="https://flowbite.com">
                 component library based on Tailwind CSS called Flowbite
@@ -68,18 +68,18 @@ export default function BlogDetail() {
               <figcaption>Digital art by Anonymous</figcaption>
             </figure>
             <h2>Getting started with Flowbite</h2>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               First of all you need to understand how Flowbite works. This
               library is not another framework. Rather, it is a set of
               components based on Tailwind CSS that you can just copy-paste from
               the documentation.
             </p>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               It also includes a JavaScript file that enables interactive
               components, such as modals, dropdowns, and datepickers which you
               can optionally include into your project via CDN or NPM.
             </p>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               You can check out the{" "}
               <a href="https://flowbite.com/docs/getting-started/quickstart/">
                 quickstart guide
@@ -89,7 +89,7 @@ export default function BlogDetail() {
               recommend you to follow the build tools steps so that you can
               purge and minify the generated CSS.
             </p>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               You'll also receive a lot of useful application UI, marketing UI,
               and e-commerce pages that can help you get started with your
               projects even faster. You can check out this{" "}
@@ -100,7 +100,7 @@ export default function BlogDetail() {
               pro version of Flowbite.
             </p>
             <h2>When does design come in handy?</h2>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               While it might seem like extra work at a first glance, here are
               some key moments in which prototyping will come in handy:
             </p>
@@ -130,37 +130,37 @@ export default function BlogDetail() {
               </li>
             </ol>
             <h3>Laying the groundwork for best design</h3>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               Before going digital, you might benefit from scribbling down some
               ideas in a sketchbook. This way, you can think things through
               before committing to an actual design project.
             </p>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               Let&apos;s start by including the CSS file inside the <code>head</code>{" "}
               tag of your HTML.
             </p>
             <h3>Understanding typography</h3>
             <h4>Type properties</h4>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               A typeface is a collection of letters. While each letter is
               unique, certain shapes are shared across letters. A typeface
               represents shared patterns across a collection of letters.
             </p>
             <h4>Baseline</h4>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               A typeface is a collection of letters. While each letter is
               unique, certain shapes are shared across letters. A typeface
               represents shared patterns across a collection of letters.
             </p>
             <h4>Measurement from the baseline</h4>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               A typeface is a collection of letters. While each letter is
               unique, certain shapes are shared across letters. A typeface
               represents shared patterns across a collection of letters.
             </p>
             <h3>Type classification</h3>
             <h4>Serif</h4>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               A serif is a small shape or projection that appears at the
               beginning or end of a stroke on a letter. Typefaces with serifs
               are called serif typefaces. Serif fonts are classified as one of
@@ -182,19 +182,19 @@ export default function BlogDetail() {
               <li>Slanted serifs on lower-case ascenders</li>
             </ol>
             <h3>Laying the best for successful prototyping</h3>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               A serif is a small shape or projection that appears at the
               beginning:
             </p>
             <blockquote>
-              <p>
+              <p className="text-gray-500 dark:text-gray-400">
                 Flowbite is just awesome. It contains tons of predesigned
                 components and pages starting from login screen to complex
                 dashboard. Perfect choice for your next SaaS application.
               </p>
             </blockquote>
             <h4>Code example</h4>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               A serif is a small shape or projection that appears at the
               beginning or end of a stroke on a letter. Typefaces with serifs
               are called serif typefaces. Serif fonts are classified as one of
@@ -225,7 +225,7 @@ export default function BlogDetail() {
               </code> */}
             </pre>
             <h4>Table example</h4>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               A serif is a small shape or projection that appears at the
               beginning or end of a stroke on a letter.
             </p>
@@ -283,7 +283,7 @@ export default function BlogDetail() {
               </tbody>
             </table>
             <h3>Best practices for setting up your prototype</h3>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               <strong>Low fidelity or high fidelity?</strong> Fidelity refers to
               how close a prototype will be to the real deal. If you’re simply
               preparing a quick visual aid for a presentation, a low-fidelity
@@ -293,14 +293,14 @@ export default function BlogDetail() {
               on-brand colors, fonts and imagery — could help get more pointed
               results.
             </p>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               <strong>Consider your user</strong>. To create an intuitive user
               flow, try to think as your user would when interacting with your
               product. While you can fine-tune this during beta testing,
               considering your user’s needs and habits early on will save you
               time by setting you on the right path.
             </p>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               <strong>Start from the inside out</strong>. A nice way to both
               organize your tasks and create more user-friendly prototypes is by
               building your prototypes ‘inside out’. Start by focusing on what
@@ -309,7 +309,7 @@ export default function BlogDetail() {
               you’ll be able to create a prototype that puts your users’ needs
               at the heart of your design.
             </p>
-            <p>
+            <p className="text-gray-500 dark:text-gray-400">
               And there you have it! Everything you need to design and share
               prototypes — right in Flowbite Figma.
             </p>
@@ -414,7 +414,7 @@ export default function BlogDetail() {
                     </ul>
                   </div>
                 </footer>
-                <p>
+                <p className="text-gray-500 dark:text-gray-400">
                   Very straight-to-point article. Really worth time reading.
                   Thank you! But tools are just the instruments for the UX
                   designers. The knowledge of the design tools are as important
@@ -512,7 +512,7 @@ export default function BlogDetail() {
                     </ul>
                   </div>
                 </footer>
-                <p>Much appreciated! Glad you liked it ☺️</p>
+                <p className="text-gray-500 dark:text-gray-400">Much appreciated! Glad you liked it ☺️</p>
                 <div className="flex items-center mt-4 space-x-4">
                   <button
                     type="button"

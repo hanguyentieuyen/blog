@@ -1,5 +1,7 @@
 "use client";
 
+import { initialBlogFrom } from "@/constanst";
+import { BlogForm } from "@/types";
 import {
   Dispatch,
   ReactNode,
@@ -15,6 +17,8 @@ type ContextType = {
   theme: string;
   setTheme: Dispatch<SetStateAction<string>>;
   toggleTheme: () => void;
+  formBlog: BlogForm;
+  setFormBlog: Dispatch<SetStateAction<BlogForm>>
 };
 
 const initialState = {
@@ -23,6 +27,8 @@ const initialState = {
   theme: "light",
   setTheme: () => {},
   toggleTheme: () => {},
+  formBlog: initialBlogFrom,
+  setFormBlog: () => {}
 };
 
 const getThemeFromLocalStorage = () => {
@@ -39,7 +45,7 @@ export default function GlobalStateProvider({ children }: { children: ReactNode 
   const [theme, setTheme] = useState(() => {
     return getThemeFromLocalStorage() || "light";
   });
-
+  const [formBlog, setFormBlog] = useState(initialBlogFrom)
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
@@ -50,7 +56,7 @@ export default function GlobalStateProvider({ children }: { children: ReactNode 
   }, [theme]);
   return (
     <GlobalContext.Provider
-      value={{ loading, setLoading, theme, setTheme, toggleTheme }}
+      value={{ loading, setLoading, theme, setTheme, toggleTheme, formBlog, setFormBlog }}
     >
       {children}
     </GlobalContext.Provider>

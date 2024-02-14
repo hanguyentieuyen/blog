@@ -1,7 +1,7 @@
 "use client";
 
 import { initialBlogFrom } from "@/constanst";
-import { BlogForm } from "@/types";
+import { Blog, BlogForm } from "@/types";
 import {
   Dispatch,
   ReactNode,
@@ -18,7 +18,11 @@ type ContextType = {
   setTheme: Dispatch<SetStateAction<string>>;
   toggleTheme: () => void;
   formBlog: BlogForm;
-  setFormBlog: Dispatch<SetStateAction<BlogForm>>
+  setFormBlog: Dispatch<SetStateAction<BlogForm>>;
+  searchQuery: string;
+  setSearchQuery: Dispatch<SetStateAction<string>>;
+  searchResult: Blog[];
+  setSearchResult: Dispatch<SetStateAction<Blog[]>>;
 };
 
 const initialState = {
@@ -28,7 +32,11 @@ const initialState = {
   setTheme: () => {},
   toggleTheme: () => {},
   formBlog: initialBlogFrom,
-  setFormBlog: () => {}
+  setFormBlog: () => {},
+  searchQuery: "",
+  setSearchQuery: () => {},
+  searchResult: [],
+  setSearchResult: () => {},
 };
 
 const getThemeFromLocalStorage = () => {
@@ -40,12 +48,18 @@ const getThemeFromLocalStorage = () => {
 
 export const GlobalContext = createContext<ContextType>(initialState);
 
-export default function GlobalStateProvider({ children }: { children: ReactNode }) {
+export default function GlobalStateProvider({
+  children,
+}: {
+  children: ReactNode;
+}) {
   const [loading, setLoading] = useState(false);
   const [theme, setTheme] = useState(() => {
     return getThemeFromLocalStorage() || "light";
   });
-  const [formBlog, setFormBlog] = useState(initialBlogFrom)
+  const [formBlog, setFormBlog] = useState(initialBlogFrom);
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [searchResult, setSearchResult] = useState<Blog[]>([]);
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
@@ -56,7 +70,19 @@ export default function GlobalStateProvider({ children }: { children: ReactNode 
   }, [theme]);
   return (
     <GlobalContext.Provider
-      value={{ loading, setLoading, theme, setTheme, toggleTheme, formBlog, setFormBlog }}
+      value={{
+        loading,
+        setLoading,
+        theme,
+        setTheme,
+        toggleTheme,
+        formBlog,
+        setFormBlog,
+        searchQuery,
+        setSearchQuery,
+        searchResult,
+        setSearchResult,
+      }}
     >
       {children}
     </GlobalContext.Provider>

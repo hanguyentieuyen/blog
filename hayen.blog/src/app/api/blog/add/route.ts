@@ -1,9 +1,9 @@
 import prisma from "@/utils/database";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(resquest: NextRequest) {
+export async function POST(request: NextRequest) {
     try {
-        const dataBlog = await resquest.json()
+        const dataBlog = await request.json()
         const createBlog = await prisma.blog.create({data: dataBlog})
 
         if (createBlog) {

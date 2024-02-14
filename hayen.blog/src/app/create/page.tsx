@@ -34,9 +34,9 @@ const handleUploadImage = (file) => {
 };
 
 export default function Create() {
-  const {formBlog, setFormBlog} = useContext(GlobalContext);
-  const {data: session} = useSession()
-  const router = useRouter()
+  const { formBlog, setFormBlog } = useContext(GlobalContext);
+  const { data: session } = useSession();
+  const router = useRouter();
 
   const handleOnChangeImage = async (
     e: React.ChangeEvent<HTMLInputElement>
@@ -44,11 +44,11 @@ export default function Create() {
     if (!e.target.files) return;
 
     const uploadImage = await handleUploadImage(e.target.files[0]);
-    if(uploadImage !== "") {
+    if (uploadImage !== "") {
       setFormBlog({
-        ...formBlog, 
-        image: String(uploadImage)
-      })
+        ...formBlog,
+        image: String(uploadImage),
+      });
     }
   };
 
@@ -56,21 +56,20 @@ export default function Create() {
     const res = await fetch("/api/blog/add", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         ...formBlog,
         userId: session?.user?.name,
         userImage: session?.user?.image,
-        comments: []
-      })
-    })
-    
-    const data = await res.json()
-    //console.log("response: ", data)
+        comments: [],
+      }),
+    });
+
+    const data = await res.json();
     if (data && data.status) {
-      setFormBlog(initialBlogFrom)
-      router.push("/blogs")
+      setFormBlog(initialBlogFrom);
+      router.push("/blogs");
     }
   };
 
@@ -101,8 +100,8 @@ export default function Create() {
                       onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                         setFormBlog({
                           ...formBlog,
-                          title: e.target.value
-                        })
+                          title: e.target.value,
+                        });
                       }}
                     />
                   </div>
@@ -123,8 +122,8 @@ export default function Create() {
                       onChange={(e) => {
                         setFormBlog({
                           ...formBlog,
-                          category: e.target.value
-                        })
+                          category: e.target.value,
+                        });
                       }}
                     >
                       <option>Select</option>
@@ -158,8 +157,8 @@ export default function Create() {
                       onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
                         setFormBlog({
                           ...formBlog,
-                          content: e.target.value
-                        })
+                          content: e.target.value,
+                        });
                       }}
                     />
                   </div>
@@ -218,10 +217,7 @@ export default function Create() {
             >
               Cancel
             </button>
-            <Button
-              text="Publish"
-              onClick={handleSubmit}
-            />
+            <Button text="Publish" onClick={handleSubmit} />
           </div>
         </form>
       </div>

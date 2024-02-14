@@ -8,15 +8,11 @@ const getAllBlogs = async () => {
       "Content-Type": "application/json",
     },
   });
-  //console.log('RES: ', res)
-  //const data = await res.json();
-
-  //if (data.status) return data.data;
+  const data = await res.json();
+  if (data.status) return data.data;
 };
 
 export default async function BlogsPage() {
   const data = await getAllBlogs();
-  //console.log(data);
-  
-  return <BlogList  />;
+  return <BlogList list={data} />;
 }

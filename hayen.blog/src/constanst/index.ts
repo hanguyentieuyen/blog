@@ -12,6 +12,14 @@ export const categories: Option = [
     {
         text: "Javascript",
         value: "javascript"
+    },
+    {
+        text: "HTML",
+        value: "html"
+    },
+    {
+        text: "CSS",
+        value: "css"
     }
 ]
 

@@ -9,6 +9,17 @@ import { Fragment, useContext, useEffect } from "react";
 export default function Search() {
   const { searchQuery, setSearchQuery, searchResult, setSearchResult } =
     useContext(GlobalContext);
+  const handleDelete = async (id: number) => {
+    const res = await fetch(`/api/blog/delete?id=${id}`, {
+      method: "DELETE",
+      cache: "no-store",
+    });
+
+    const data = await res.json();
+    if (data.status) {
+      handleSearch();
+    }
+  };
 
   const handleSearch = async () => {
     const res = await fetch(`/api/search?query=${searchQuery}`, {
@@ -18,16 +29,14 @@ export default function Search() {
 
     const data = await res.json();
     if (data.status) {
-      setSearchQuery("");
       setSearchResult(data.data);
     }
   };
 
   useEffect(() => {
-    setSearchResult([]),
-    setSearchQuery('')
-  },[])
-  
+    setSearchResult([]), setSearchQuery("");
+  }, []);
+
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
@@ -58,7 +67,7 @@ export default function Search() {
                 </svg>
               </div>
               <input
-                type="search"
+                type="text"
                 id="default-search"
                 className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Search blog..."
@@ -71,13 +80,21 @@ export default function Search() {
             </div>
           </form>
         </div>
-        <div className="mt-2"><Button text="Tìm kiếm" onClick={handleSearch} /></div>
+        <div className="mt-2">
+          <Button text="Tìm kiếm" onClick={handleSearch} />
+        </div>
       </div>
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-      <div className="grid gap-8 lg:grid-cols-3">
-          {searchResult && searchResult.length ? searchResult.map((item: Blog) => (<Fragment key={item.id}>
-            <BlogCard post={item}/>
-          </Fragment>)) : <p className="text-xl dark:text-gray-200">Không có bài viết nào</p>}
+        <div className="grid gap-8 lg:grid-cols-3">
+          {searchResult && searchResult.length ? (
+            searchResult.map((item: Blog) => (
+              <Fragment key={item.id}>
+                <BlogCard post={item} handleDelete={handleDelete} />
+              </Fragment>
+            ))
+          ) : (
+            <p className="text-xl dark:text-gray-200">Không có bài viết nào</p>
+          )}
         </div>
       </div>
     </section>

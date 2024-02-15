@@ -9,6 +9,17 @@ export default function BlogList({ list }: { list: Blog[] }) {
   useEffect(() => {
     router.refresh();
   }, []);
+
+  const handleDelete = async (id: number) => {
+    const res = await fetch(`/api/blog/delete?id=${id}`, {
+      method: "DELETE",
+      cache: "no-store"
+    })
+    const data = await res.json()
+    if (data.status) {
+      router.refresh()
+    }
+  }
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
@@ -21,7 +32,7 @@ export default function BlogList({ list }: { list: Blog[] }) {
           {list && list.length
             ? list.map((item: Blog) => (
                 <Fragment key={item.id}>
-                  <BlogCard post={item} />
+                  <BlogCard post={item} handleDelete={handleDelete}/>
                 </Fragment>
               ))
             : null}

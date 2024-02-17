@@ -14,7 +14,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
 
-const handleUploadImage = (file) => {
+const handleUploadImage = (file: any) => {
   const nameFile = new Date().getTime() + file.name;
   const storage = getStorage(app);
   const storageRef = ref(storage, `blog/${nameFile}`);

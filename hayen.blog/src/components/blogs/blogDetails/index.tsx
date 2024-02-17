@@ -109,7 +109,7 @@ export default function BlogDetail({ blogData }: { blogData: Blog }) {
                 </h2>
               </div>
               {blogData && blogData.comments && blogData.comments.length > 0
-                ? blogData.comments.map((comment, index) => (
+                ? blogData.comments.map((comment: string, index) => (
                     <div
                       key={index}
                       className="p-6 text-base rounded-lg dark:bg-gray-900"

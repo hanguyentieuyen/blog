@@ -7,8 +7,8 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Blog App",
-  description: "Hayen notes",
+  title: "YenHa Blog",
+  description: "Welcome to my digital space",
 };
 
 export default function RootLayout({

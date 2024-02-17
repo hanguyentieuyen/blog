@@ -12,7 +12,7 @@ export default function BlogCard({
   handleDelete: (id: number) => {};
 }) {
   const { content, title, category, userImage, userId, image, id } = post;
-  const session = useSession()
+  const session = useSession();
   return (
     <article className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
       <div className="relative block h-[250px] w-full">
@@ -24,7 +24,7 @@ export default function BlogCard({
       <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         <Link href={`/blogs/${id}`}>{title}</Link>
       </h2>
-      <p className="mb-5 font-light text-gray-500 dark:text-gray-400">
+      <p className="mb-5 font-light text-gray-500 dark:text-gray-100">
         {content}
       </p>
       <div className="flex justify-between items-center">
@@ -39,11 +39,12 @@ export default function BlogCard({
           <span className="font-medium dark:text-white">
             {userId.split("_")[0]}
           </span>
-          {session !== null && session.data?.user?.name === userId}
-          <FaTrash
-            onClick={() => handleDelete(id)}
-            className="dark:text-gray-200"
-          />
+          {session !== null && session.data?.user?.name === userId && (
+            <FaTrash
+              onClick={() => handleDelete(id)}
+              className="dark:text-gray-100"
+            />
+          )}
         </div>
       </div>
     </article>

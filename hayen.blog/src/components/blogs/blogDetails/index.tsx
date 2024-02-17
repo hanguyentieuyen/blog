@@ -35,8 +35,8 @@ export default function BlogDetail({ blogData }: { blogData: Blog }) {
     <Fragment>
       <section className=" bg-white dark:bg-gray-900 antialiased">
         <div className="container">
-          <div className="-mx-4 flex flex-col gap-4 items-center justify-center">
-            <div className="w-full px-4 lg:w-8/12">
+          <div className="mx-4 flex flex-col gap-4 items-center justify-center">
+            <div className="w-full lg:w-8/12">
               <h2 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl">
                 {blogData?.title}
               </h2>
@@ -60,7 +60,7 @@ export default function BlogDetail({ blogData }: { blogData: Blog }) {
                 </div>
                 <div className="mb-5">
                   <Link
-                    className="inline-flex items-center justify-center rounded-full bg-primary py-2 px-4 text-sm font-semibold text-gray-700 dark:text-gray-200"
+                    className="inline-flex items-center justify-center rounded-full bg-primary py-2 px-4 text-sm font-semibold text-gray-700 dark:text-gray-100"
                     href={`/category/${blogData?.category}`}
                   >
                     {blogData?.category}
@@ -78,7 +78,7 @@ export default function BlogDetail({ blogData }: { blogData: Blog }) {
                     />
                   </div>
                 </div>
-                <p className="mb-8 leading-relaxed text-base font-medium text-body-color sm:text-lg lg:text-base xl:text-lg">
+                <p className="mb-8 leading-relaxed text-base font-medium text-body-color sm:text-lg lg:text-base xl:text-lg dark:text-gray-100">
                   {blogData?.content}
                 </p>
               </div>

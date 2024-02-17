@@ -41,14 +41,7 @@ export default function Search() {
     <section className="bg-white dark:bg-gray-900">
       <div className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
         <div className="w-full">
-          <form>
-            <label
-              htmlFor="default-search"
-              className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-            >
-              Search
-            </label>
-            <div className="relative">
+          <div className="relative">
               <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                 <svg
                   className="w-4 h-4 text-gray-500 dark:text-gray-400"
@@ -78,7 +71,6 @@ export default function Search() {
                 }
               />
             </div>
-          </form>
         </div>
         <div className="mt-2">
           <Button text="Tìm kiếm" onClick={handleSearch} />
@@ -93,7 +85,7 @@ export default function Search() {
               </Fragment>
             ))
           ) : (
-            <p className="text-xl dark:text-gray-200">Không có bài viết nào</p>
+            <p className="text-xl dark:text-gray-100">Không có bài viết nào</p>
           )}
         </div>
       </div>

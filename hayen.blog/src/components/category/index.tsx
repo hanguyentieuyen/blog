@@ -14,8 +14,8 @@ export default function Category({ blogs }: { blogs: Blog[] }) {
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div className="-mx-4 flex flex-wrap">
-          <div className="w-full px-4 lg:w-8/12">
+        <div className="mx-4 flex flex-wrap">
+          <div className="w-full lg:w-8/12">
             {lastedBlogsByCategory === null ? (
               <div className="flex flex-col gap-4">
                 <h2 className="mb-8 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl">
@@ -41,7 +41,7 @@ export default function Category({ blogs }: { blogs: Blog[] }) {
                     />
                   </div>
                 </div>
-                <p className="mb-8 leading-relaxed text-base font-medium text-body-color sm:text-lg lg:text-base xl:text-lg">
+                <p className="mb-8 leading-relaxed text-base font-medium text-body-color sm:text-lg lg:text-base xl:text-lg dark:text-gray-100">
                   {lastedBlogsByCategory?.content}
                 </p>
               </div>

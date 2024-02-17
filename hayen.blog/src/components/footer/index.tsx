@@ -1,8 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 dark:bg-gray-800 antialiased">
-      <div className="p-4 py-6 mx-auto max-w-screen-xl md:p-8 lg:p-10">
-        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+    <footer className="bg-gray-50 dark:bg-gray-900 antialiased">
+      <div className="p-4 mx-auto max-w-screen-xl">
         <div className="text-center">
           <span
             data-tooltip-target="tooltip-about-me"

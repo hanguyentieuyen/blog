@@ -126,7 +126,7 @@ export default function Create() {
                     }}
                   >
                     <option>Select</option>
-                    {categories.map((option, index) => (
+                    {categories && categories.map((option, index) => (
                       <option
                         key={index}
                         id={option.value}

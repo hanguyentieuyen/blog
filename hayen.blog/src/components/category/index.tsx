@@ -53,7 +53,7 @@ export default function Category({ blogs }: { blogs: Blog[] }) {
                 Filter by Category
               </h3>
               <div className="flex flex-wrap py-6 px-8">
-                {categories.map((category) => (
+                {categories && categories.map((category) => (
                   <Button
                     key={category.value}
                     onClick={() => router.push(`/category/${category.value}`)}

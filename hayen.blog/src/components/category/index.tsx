@@ -8,7 +8,7 @@ import { categories } from "@/constanst";
 
 export default function Category({ blogs }: { blogs: Blog[] }) {
   const router = useRouter();
-  const lastedBlogId = Math.max(...blogs.map((blog) => blog.id));
+  const lastedBlogId = Array.isArray(blogs) && Math.max(...blogs.map((blog) => blog.id));
   const lastedBlogsByCategory = blogs?.find((blog) => blog.id === lastedBlogId) ?? null
   const relatedBlogs = blogs?.filter((blog) => blog.id !== lastedBlogId) ?? []
   return (

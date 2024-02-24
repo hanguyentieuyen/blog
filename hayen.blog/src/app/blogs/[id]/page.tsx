@@ -2,10 +2,13 @@ import BlogDetail from "@/components/blogs/blogDetails";
 
 const blogById = async (blogId: number) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_LOCAL_URL}/api/blog/blogDetail?blogId=${blogId}`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/blog/blogDetail?blogId=${blogId}`,
     {
       method: "GET",
-      cache: "no-store",
+      cache: "no-cache",
+      headers: {
+        "Content-Type": "application/json",
+      },
     }
   );
   const data = await res.json();

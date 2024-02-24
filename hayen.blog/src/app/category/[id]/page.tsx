@@ -2,10 +2,10 @@ import Category from "@/components/category";
 
 const getBlogsByCategory = async (id: string) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_LOCAL_URL}/api/category?categoryId=${id}`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/category?categoryId=${id}`,
     {
       method: "GET",
-      cache: "no-store",
+      cache: "no-cache",
       headers: {
         "Content-Type": "application/json",
       },

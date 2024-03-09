@@ -35,7 +35,7 @@ export default function Search() {
 
   useEffect(() => {
     setSearchResult([]), setSearchQuery("");
-  }, []);
+  }, [setSearchQuery, setSearchResult]);
 
   return (
     <section className="bg-white dark:bg-gray-900">

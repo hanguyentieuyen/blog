@@ -8,7 +8,7 @@ export default function BlogList({ list }: { list: Blog[] }) {
   const router = useRouter();
   useEffect(() => {
     router.refresh();
-  }, []);
+  }, [router]);
 
   const handleDelete = async (id: number) => {
     const res = await fetch(`/api/blog/delete?id=${id}`, {
